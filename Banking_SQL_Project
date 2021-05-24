@@ -1,0 +1,549 @@
+# Banking – SQL Project:- 
+
+import mysql.connector
+import pickle
+
+mydb = mysql.connector.connect(host="localhost", user="root", passwd="Nitesh1991J", database="DBBANK")
+mycursor = mydb.cursor()  # buffered=True)
+
+
+# mycursor.execute("create database DBBANK")
+
+def Menu():
+    print("*" * 140)
+    print("Home MENU".center(140))
+    print("1. Insert Record(s)".center(140))
+    print("2. Show records (A/c number)".center(140))
+    print("    a. Show as per A/c number".center(140))
+    print("    b. Show as per name".center(140))
+    print("    c. Show as per Balance".center(140))
+    print("3. Search Records of A/c number".center(140))
+    print("4. Modify records".center(140))
+    print("5. Delete records".center(140))
+    print("6. Credit/Withdraw money".center(140))
+    print("    a. Withdraw from A/c".center(140))
+    print("    b. Credit into A/c".center(140))
+    print("7. Exit".center(140))
+    print("*" * 140)
+
+
+def MenuSort():
+    print("    a. Show as per A/c number".center(140))
+    print("    b. Show as per name".center(140))
+    print("    c. Show as per Balance".center(140))
+    print("    d. Back".center(140))
+
+
+def MenuTransaction():
+    print("    a. Withdraw from Savings A/c".center(140))
+    print("    b. Credit into A/c".center(140))
+    print("    c. Back".center(140))
+
+
+def Create():
+    try:
+        mycursor.execute(
+            "create table bank(ACCNO varchar(10), NAME varchar(20), MOBILE varchar(15), EMAIL varchar(30), ADDRESS varchar(20), CITY varchar(20), COUNTRY varchar(20), BALANCE Integer(20))")
+        print("Table created")
+        Insert()
+    except:
+        print("Table Exist")
+        Insert()
+
+
+def Insert():
+    while True:
+        Acc = input("Enter A/c Number: ")
+        Name = input("Enter Name: ")
+        Mob = input("Enter Mob Number: ")
+        email = input("Enter Email: ")
+        Add = input("Enter Address: ")
+        City = input("Enter City: ")
+        Country = input("Enter Country: ")
+        Bal = float(input("Enter Funds: "))
+        Rec = [Acc, Name.upper(), Mob, email.upper(), Add.upper(), City.upper(), Country.upper(), Bal]
+        Cmd = "insert into bank values(%s,%s,%s,%s,%s,%s,%s,%s)"
+        mycursor.execute(Cmd, Rec)
+        mydb.commit()
+        ch = input("Do you want to enter more records-(y/n): ")
+        if ch == "N" or ch == "n":
+            break
+
+
+def DispSortAcc():
+    try:
+        cmd = "select * from BANK order by ACCNO"
+        mycursor.execute(cmd)
+        S = mycursor.fetchall()
+        F = "%15s %15s %15s %15s %15s %15s %15s %15s"
+        print(F % ("ACCNO", "NAME", "MOBILE", "EMAIL", "ADDRESS", "CITY", "COUNTRY", "BALANCE"))
+        print("=" * 125)
+        for i in S:
+            for j in i:
+                print("%14s" % j, end=" ")
+            print()
+        print("=" * 125)
+    except:
+        print("Table doesn't exist")
+
+
+def DispSortName():
+    try:
+        cmd = "select * from BANK order by NAME"
+        mycursor.execute(cmd)
+        S = mycursor.fetchall()
+        F = "%15s %15s %15s %15s %15s %15s %15s %15s"
+        print(F % ("ACCNO", "NAME", "MOBILE", "EMAIL", "ADDRESS", "CITY", "COUNTRY", "BALANCE"))
+        print("=" * 125)
+        for i in S:
+            for j in i:
+                print("%14s" % j, end=" ")
+            print()
+        print("=" * 125)
+    except:
+        print("Table doesn't exist")
+
+
+def DispSortBal():
+    try:
+        cmd = "select * from BANK order by BALANCE"
+        mycursor.execute(cmd)
+        S = mycursor.fetchall()
+        F = "%15s %15s %15s %15s %15s %15s %15s %15s"
+        print(F % ("ACCNO", "NAME", "MOBILE", "EMAIL", "ADDRESS", "CITY", "COUNTRY", "BALANCE"))
+        print("=" * 125)
+        for i in S:
+            for j in i:
+                print("%14s" % j, end=" ")
+            print()
+        print("=" * 125)
+    except:
+        print("Table doesn't exist")
+
+
+def DispSearchAcc():
+    try:
+        cmd = "select * from BANK"
+        mycursor.execute(cmd)
+        S = mycursor.fetchall()
+        ch = input("Enter the A/c Number to be searched: ")
+        for i in S:
+            if i[0] == ch:
+                print("=" * 125)
+                F = "%15s %15s %15s %15s %15s %15s %15s %15s"
+                print(F % ("ACCNO", "NAME", "MOBILE", "EMAIL", "ADDRESS", "CITY", "COUNTRY", "BALANCE"))
+                for j in i:
+                    print("%14s" % j, end=" ")
+                print()
+                break
+            else:
+                print("Not found")
+    except:
+        print("Table does not exist")
+
+
+def Update():
+    try:
+        cmd = "select * from BANK"
+        mycursor.execute(cmd)
+        S = mycursor.fetchall()
+        A = input("Enter A/c number to modify details within it: ")
+        for i in S:
+            i = list(i)
+            if i[0] == A:
+                ch = input("Change Name (Y/N): ")
+                if ch == "y" or ch == "Y":
+                    i[1] = input("Enter Modified Name: ")
+                    i[1] = i[1].upper()
+                    cmd = "UPDATE BANK SET NAME=%s WHERE ACCNO=%s"
+                    val = (i[1], i[0])
+                    mycursor.execute(cmd, val)
+                    mydb.commit()
+                    print("Name updated")
+                else:
+                    print("Name not updated")
+                ch = input("Change Mobile (Y/N): ")
+                if ch == "y" or ch == "Y":
+                    i[2] = input("Enter Modified Mobile: ")
+                    i[2] = i[2].upper()
+                    cmd = "UPDATE BANK SET MOBILE=%s WHERE ACCNO=%s"
+                    val = (i[2], i[0])
+                    mycursor.execute(cmd, val)
+                    mydb.commit()
+                    print("Mobile updated")
+                else:
+                    print("Mobile not updated")
+                ch = input("Change email (Y/N): ")
+                if ch == "y" or ch == "Y":
+                    i[3] = input("Enter Modified email: ")
+                    i[3] = i[3].upper()
+                    cmd = "UPDATE BANK SET EMAIL=%s WHERE ACCNO=%s"
+                    val = (i[3], i[0])
+                    mycursor.execute(cmd, val)
+                    mydb.commit()
+                    print("Email updated")
+                else:
+                    print("Email not updated")
+                ch = input("Change Address (Y/N): ")
+                if ch == "y" or ch == "Y":
+                    i[4] = input("Enter Modified Address: ")
+                    i[4] = i[4].upper()
+                    cmd = "UPDATE BANK SET ADDRESS=%s WHERE ACCNO=%s"
+                    val = (i[4], i[0])
+                    mycursor.execute(cmd, val)
+                    mydb.commit()
+                    print("Address updated")
+                else:
+                    print("Address not updated")
+                ch = input("Change city (Y/N): ")
+                if ch == "y" or ch == "Y":
+                    i[5] = input("Enter Modified city: ")
+                    i[5] = i[5].upper()
+                    cmd = "UPDATE BANK SET CITY=%s WHERE ACCNO=%s"
+                    val = (i[5], i[0])
+                    mycursor.execute(cmd, val)
+                    mydb.commit()
+                    print("City updated")
+                else:
+                    print("City not updated")
+                ch = input("Change Country (Y/N): ")
+                if ch == "y" or ch == "Y":
+                    i[6] = input("Enter Modified Country: ")
+                    i[6] = i[6].upper()
+                    cmd = "UPDATE BANK SET COUNTRY=%s WHERE ACCNO=%s"
+                    val = (i[6], i[0])
+                    mycursor.execute(cmd, val)
+                    mydb.commit()
+                    print("Country updated")
+                else:
+                    print("Country not updated")
+                ch = input("Change Funds (Y/N): ")
+                if ch == "y" or ch == "Y":
+                    i[7] = input("Enter Modified Funds: ")
+                    i[7] = i[7].upper()
+                    print("Balance updated")
+                    cmd = "UPDATE BANK SET BALANCE=%s WHERE ACCNO=%s"
+                    val = (i[7], i[0])
+                    mycursor.execute(cmd, val)
+                    mydb.commit()
+                else:
+                    print("Balance Not updated")
+                    break
+            else:
+                print("Invalid A/c Number")
+                break
+    except:
+        print("No Such table")
+
+
+def Delete():
+    try:
+        cmd = "Select * from BANK"
+        mycursor.execute(cmd)
+        S = mycursor.fetchall()
+        A = input("Enter A/c number to Delete details within it: ")
+        for i in S:
+            i = list(i)
+            if i[0] == A:
+                cmd = "delete from BANK where ACCNO = %s"
+                val = (i[0],)
+                mycursor.execute(cmd, val)
+                mydb.commit()
+                print("A/c Deleted")
+                break
+        else:
+            print("Record does not exist")
+    except:
+        print("Table not found")
+
+
+def Debit():
+    # try:
+    cmd = "select * from BANK"
+    mycursor.execute(cmd)
+    S = mycursor.fetchall()
+    print("FYI, keep balance more than 4999 for the funds to be debited")
+    acc = input("Enter A/c Number to debit the funds from: ")
+    for i in S:
+        i = list(i)
+        if i[0] == acc:
+            Amt = int(input("Enter amout to be debited: "))
+            if i[7] - Amt >= 5000:
+                i[7] -= Amt
+                cmd = "UPDATE BANK SET BALANCE=%s WHERE ACCNO=%s"
+                val = (i[7], i[0])
+                mycursor.execute(cmd, val)
+                mydb.commit()
+                print("Funds Debited")
+                break
+            else:
+                print("The Balance should be more than 4999 after any withdrawal")
+                break
+    else:
+        print("No records")
+        # except:
+    # print("No records")
+
+
+def Credit():
+    try:
+        cmd = "select * from BANK"
+        mycursor.execute(cmd)
+        S = mycursor.fetchall()
+        acc = input("Enter A/c Number to Credit funds into: ")
+        for i in S:
+            i = list(i)
+            if i[0] == acc:
+                Amt = int(input("Enter amout to be credited: "))
+                i[7] += Amt
+                cmd = "UPDATE BANK SET BALANCE=%s WHERE ACCNO=%s"
+                val = (i[7], i[0])
+                mycursor.execute(cmd, val)
+                mydb.commit()
+                print("Funds Credited")
+                break
+        else:
+            print("No records")
+    except:
+        print("No records")
+
+
+while True:
+    Menu()
+    ch = input("Choose options from Menu: ")
+    if ch == "1":
+        Create()
+    elif ch == "2":
+        while True:
+            MenuSort()
+            ch1 = input("Choose the sub-option a/b/c/d : ")
+            if ch1 in ["a", "A"]:
+                DispSortAcc()
+            elif ch1 in ["b", "B"]:
+                DispSortName()
+            elif ch1 in ["c", "C"]:
+                DispSortBal()
+            elif ch1 in ["d", "D"]:
+                print("Back to Home Menu")
+                break
+            else:
+                print("Invalid option")
+    elif ch == "3":
+        DispSearchAcc()
+    elif ch == "4":
+        Update()
+    elif ch == "5":
+        Delete()
+    elif ch == "6":
+        while True:
+            MenuTransaction()
+            ch1 = input("Choose the sub-option a/b/c : ")
+            if ch1 in ["a", "A"]:
+                Debit()
+            elif ch1 in ["b", "B"]:
+                Credit()
+            elif ch1 in ["c", "C"]:
+                print("Back to Home Menu")
+                break
+            else:
+                print("Invalid option")
+    elif ch == "7":
+        print("Exited ")
+        break
+    else:
+        print("Invalid option")
+
+
+#Non-SQL Banking Project
+import pickle
+import os
+import pathlib
+class Account :
+   accNo = 0
+   name = ''
+   deposit=0
+   type = ''
+   def createAccount(self):
+       self.accNo= int(input("Enter the account no : "))
+       self.name = input("Enter the account holder name : ")
+       self.type = input('Ente the type of account [C/S] : ')
+       self.deposit = int(input('Enter The Initial amount(>=500 for Saving and >=1000 for current) : '))
+       print('\n\n\nAccount Created')
+   def showAccount(self):
+       print('Account Number : ',self.accNo)
+       print('Account Holder Name : ', self.name)
+       print('Type of Account',self.type)
+       print('Balance : ',self.deposit)
+   def modifyAccount(self):
+       print('Account Number : ',self.accNo)
+       self.name = input('Modify Account Holder Name :')
+       self.type = input('Modify type of Account :')
+       self.deposit = int(input('Modify Balance :'))
+   def depositAmount(self,amount):
+       self.deposit += amount
+   def withdrawAmount(self,amount):
+       self.deposit -= amount
+   def report(self):
+       print(self.accNo, ' ',self.name ,' ',self.type,' ', self.deposit)
+   def getAccountNo(self):
+       return self.accNo
+   def getAcccountHolderName(self):
+       return self.name
+   def getAccountType(self):
+       return self.type
+   def getDeposit(self):
+       return self.deposit
+def intro():
+   print('\t\t\t\t**********************')
+   print('\t\t\t\tBANK MANAGEMENT SYSTEM')
+   print('\t\t\t\t**********************')
+   print('\t\t\t\tBrought To You By:')
+   print('\t\t\t\tprojectworlds.in')
+   input()
+def writeAccount():
+   account = Account()
+   account.createAccount()
+   writeAccountsFile(account)
+def displayAll():
+   file = pathlib.Path('accounts.data')
+   if file.exists ():
+       infile = open('accounts.data','rb')
+       mylist = pickle.load(infile)
+       for item in mylist :
+           print(item.accNo,' ', item.name, ' ',item.type, ' ',item.deposit )
+       infile.close()
+   else :
+       print('No records to display')
+def displaySp(num):
+   file = pathlib.Path('accounts.data')
+   if file.exists ():
+       infile = open('accounts.data','rb')
+       mylist = pickle.load(infile)
+       infile.close()
+       found = False
+       for item in mylist :
+           if item.accNo == num :
+               print('Your account Balance is = ',item.deposit)
+               found = True
+   else :
+       print('No records to Search')
+   if not found :
+       print('No existing record with this number')
+def depositAndWithdraw(num1,num2):
+   file = pathlib.Path('accounts.data')
+   if file.exists ():
+       infile = open('accounts.data','rb')
+       mylist = pickle.load(infile)
+       infile.close()
+       os.remove('accounts.data')
+       for item in mylist :
+           if item.accNo == num1 :
+               if num2 == 1 :
+                   amount = int(input('Enter the amount to deposit : '))
+                   item.deposit += amount
+                   print('Your account is updted')
+               elif num2 == 2 :
+                   amount = int(input('Enter the amount to withdraw : '))
+                   if amount <= item.deposit :
+                       item.deposit -=amount
+                   else :
+                       print('You cannot withdraw larger amount')
+   else :
+       print('No records to Search')
+   outfile = open('newaccounts.data','wb')
+   pickle.dump(mylist, outfile)
+   outfile.close()
+   os.rename('newaccounts.data', 'accounts.data')
+def deleteAccount(num):
+   file = pathlib.Path('accounts.data')
+   if file.exists ():
+       infile = open('accounts.data','rb')
+       oldlist = pickle.load(infile)
+       infile.close()
+       newlist = []
+       for item in oldlist :
+           if item.accNo != num :
+               newlist.append(item)
+       os.remove('accounts.data')
+       outfile = open('newaccounts.data','wb')
+       pickle.dump(newlist, outfile)
+       outfile.close()
+       os.rename('newaccounts.data', 'accounts.data')
+def modifyAccount(num):
+   file = pathlib.Path('accounts.data')
+   if file.exists ():
+       infile = open('accounts.data','rb')
+       oldlist = pickle.load(infile)
+       infile.close()
+       os.remove('accounts.data')
+       for item in oldlist :
+           if item.accNo == num :
+               item.name = input('Enter the account holder name : ')
+               item.type = input('Enter the account Type : ')
+               item.deposit = int(input('Enter the Amount : '))
+       outfile = open('newaccounts.data','wb')
+       pickle.dump(oldlist, outfile)
+       outfile.close()
+       os.rename('newaccounts.data', 'accounts.data')
+def writeAccountsFile(account) :
+   file = pathlib.Path('accounts.data')
+   if file.exists ():
+       infile = open('accounts.data','rb')
+       oldlist = pickle.load(infile)
+       oldlist.append(account)
+       infile.close()
+       os.remove('accounts.data')
+   else :
+       oldlist = [account]
+   outfile = open('newaccounts.data','wb')
+   pickle.dump(oldlist, outfile)
+   outfile.close()
+   os.rename('newaccounts.data', 'accounts.data')
+# start of the program
+ch=''
+num=0
+intro()
+while ch != 8:
+   #system('cls');
+   print('\tMAIN MENU')
+   print('\t1. NEW ACCOUNT')
+   print('\t2. DEPOSIT AMOUNT')
+   print('\t3. WITHDRAW AMOUNT')
+   print('\t4. BALANCE ENQUIRY')
+   print('\t5. ALL ACCOUNT HOLDER LIST')
+   print('\t6. CLOSE AN ACCOUNT')
+   print('\t7. MODIFY AN ACCOUNT')
+   print('\t8. EXIT')
+   print('\tSelect Your Option (1-8) ')
+   ch = input()
+   #system('cls');
+   if ch == '1':
+       writeAccount()
+   elif ch =='2':
+       num = int(input('\tEnter The account No. : '))
+       depositAndWithdraw(num, 1)
+   elif ch == '3':
+       num = int(input('\tEnter The account No. : '))
+       depositAndWithdraw(num, 2)
+   elif ch == '4':
+       num = int(input('\tEnter The account No. : '))
+       displaySp(num)
+   elif ch == '5':
+       displayAll();
+   elif ch == '6':
+       num =int(input('\tEnter The account No. : '))
+       deleteAccount(num)
+   elif ch == '7':
+       num = int(input('\tEnter The account No. : '))
+       modifyAccount(num)
+   elif ch == '8':
+       print('\tThanks for using bank management system')
+       break
+
+   else :
+       print('Invalid choice')
+       ch = input('Enter your choice : ')
+
+
+
+
