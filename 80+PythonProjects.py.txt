@@ -1,0 +1,3326 @@
+1. Download and install python interpreter, pycharm IDE; simple code in command prompt; create project in pycharm.
+
+
+2. Why do we code:- in order for the computer to understand and interpret human language
+arithmetic operations:- 
+
+addition, 3+2
+
+substraction, 3-2 
+
+multiplication, 3*2 
+
+division, 10/5 = 2.0
+
+integer = 2 is integer from above, use // not to get float or decimal number
+
+division = 10/5
+
+float division :- .0 is float  - use / to get float or decimal number
+
+arithmetic operations with brackets, (8*2) + (8-2) + (8*2) - brackets would be solved first
+
+power of exponentiation operation,  use ** for power (square root, or cube etc) 2 ** 4  = 16
+
+modulo, % to get the remainder ex:- 10 % 3 = 1
+
+string operation, 'nitesh' = 'nitesh'
+
+escape character, print ('nitesh') = nitesh ; print ('nitesh\'s laptop') = nitesh's laptop; print ('nitesh\'s "laptop"')
+ = nitesh's "laptop"
+
+printing same string n number of times, 4 * 'nitesh ' = nitesh nitesh nitesh nitesh
+
+printing raw string, print('c:\docs\nitesh') = c:\docs
+itesh ; 
+print (r'c:\docs\nitesh') = c:\docs\nitesh
+
+
+
+3. What is variable, why do we need them:- varibale is storage location (indentified memory address) paired with a
+associated symbolic name, which contains some known or unknown quantity of information reffered to as a value, for ex:-
+x, y, z are variables in which we can store a value; x = 2, y = 4, x + y = 6
+
+how to assign a value of previous operation, _ + y
+ = 10
+
+fetching value of previous operation string value to variable,  name = 'yoututbe channel' ; name = 'youtube channel'
+name + ' rocks' = 'youtube channel rocks'
+
+fetching value to string variable by index number, name[3] = t ; name[-1] = e ; name [3:10] = 
+'tube'
+
+fetching value to string by using arithmetical operations, name [5:7] * 6 ; name [1:3]
+= 'bebebebebebe'
+'ou'
+
+finding length of string, len (name)
+ = 7
+
+
+
+4. Working with list , what is list, :- to assign mutiple values to a variable we use list by [...]
+
+how to use list nums = [25,10,14,16,18,20]
+>>> nums
+[25, 10, 14, 16, 18, 20]
+
+assign mutilple values to variables , values = [9.5, 'nitesh', 25]
+
+printing values to list  values = [9.5, 'nitesh', 25]
+>>> values
+[9.5, 'nitesh', 25]
+
+print value to list by index number, nums [-6:-5]
+[25]
+
+string list names = ['nitesh' 'stuti']
+>>> names
+['niteshstuti']
+
+list of different types of data types
+ 
+creating list with list : nested list values = [9.5, 'nitesh', 25]
+>>> values
+[9.5, 'nitesh', 25]
+
+append function nums.append (45)
+>>> nums
+[25, 10, 14, 16, 18, 20, 45]
+
+insert function nums.insert (2,12)
+>>> nums
+[25, 10, 12, 14, 16, 18, 20, 45]
+
+remove function nums.remove(12)
+>>> nums
+[25, 10, 14, 16, 18, 20, 45]
+
+pop function nums.pop (1)
+10
+>>> nums
+[25, 14, 16, 18, 20, 45]
+
+delete function del nums[2:]
+>>> nums
+[25, 14]
+
+extend function nums.extend ([16, 18, 20, 45])
+>>> nums
+[25, 14, 16, 18, 20, 45]
+
+inbuilt function of list : min, max, sum >>> min (nums)
+14
+>>> max (nums)
+45
+>>> sum (nums)
+138
+
+sort function >>> nums.sort ()
+>>> nums
+[14, 16, 18, 20, 25, 45]
+
+
+
+5. Difference between tuple and list - tuple is immutable, list is mutable, you can't change the value in tuple in list you can
+
+create tuple tup = (21,36,14,25)
+>>> tup
+(21, 36, 14, 25)
+
+tuple function, count, index
+
+where to use tuple, tuple is used only with () sign
+
+what is set, set is also like list but cannot repeat the values in variables. 
+
+defining set, set is defined with {} signs
+
+hashing in set >>> s={22,25,14,21,5}
+>>> s
+{5, 21, 22, 25, 14}
+
+set functions >>> s={3,4,5,6,7,7,8,7,6,5,4,3}
+>>> s
+{3, 4, 5, 6, 7, 8}
+
+
+
+6. Dictionary in Python: - A dictionary is a simple data structure that maps a dictionary name to a set of key/value of each element. If officially you can check the dictionary and you go to that page and then you understand the meaning of that word. If you can have this type of concept, where have key and value, every value have a unique key given by you not normal numbers, to achieve that of course you have the use dictionary itself. You will see in detail with examples below: -
+>>> keys  =['jaiswal', 'sharma', 'smith']
+>>> keys
+['jaiswal', 'sharma', 'smith']
+>>> values = ['python', 'Java','JS']
+>>> values
+['python', 'Java', 'JS']
+>>> data = dict(zip(keys,values))
+>>> data
+{'jaiswal': 'python', 'sharma': 'Java', 'smith': 'JS'}
+>>> data['sharma']
+'Java'
+>>> data['monika']
+Traceback (most recent call last):
+  File "<pyshell#250>", line 1, in <module>
+    data['monika']
+KeyError: 'monika'
+>>> data['monika'] = 'CS'
+>>> data
+{'jaiswal': 'python', 'sharma': 'Java', 'smith': 'JS', 'monika': 'CS'}
+>>> del data['smith']
+>>> data
+{'jaiswal': 'python', 'sharma': 'Java', 'monika': 'CS'}
+>>> prog = {'JS':'Atom' , 'CS':'VS' , 'python': ['pycharm','sublime'], 'Java':{'JSE':'Netbeans','JSS':'Eclipse'}}
+>>> prog
+{'JS': 'Atom', 'CS': 'VS', 'python': ['pycharm', 'sublime'], 'Java': {'JSE': 'Netbeans', 'JSS': 'Eclipse'}}
+>>> prog['CS']
+'VS'
+>>> prog['Java']
+{'JSE': 'Netbeans', 'JSS': 'Eclipse'}
+>>> prog['python'][1]
+'sublime'
+>>> prog['python']
+['pycharm', 'sublime']
+>>> prog['Java']['JSE']
+'Netbeans' 
+
+
+
+7. How to use python on CMD of windows - my computer > properties > Advanced > Environment Variables > Path > set new path from C drive 
+
+python CMD - same way to use python
+
+Help CMD - Help or list of help >>> help ('LISTS') >>> whole bunch of lists
+>>> help()
+
+Welcome to Python 3.9's help utility!
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at https://docs.python.org/3.9/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, symbols, or topics, type
+"modules", "keywords", "symbols", or "topics".  Each module also comes
+with a one-line summary of what it does; to list the modules whose name
+or summary contain a given string such as "spam", type "modules spam".
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DELETION            LOOPING             SHIFTING
+ASSIGNMENT          DICTIONARIES        MAPPINGMETHODS      SLICINGS
+ATTRIBUTEMETHODS    DICTIONARYLITERALS  MAPPINGS            SPECIALATTRIBUTES
+ATTRIBUTES          DYNAMICFEATURES     METHODS             SPECIALIDENTIFIERS
+AUGMENTEDASSIGNMENT ELLIPSIS            MODULES             SPECIALMETHODS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          STRINGMETHODS
+BINARY              EXECUTION           NONE                STRINGS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       SUBSCRIPTS
+BOOLEAN             FLOAT               NUMBERS             TRACEBACKS
+CALLABLEMETHODS     FORMATTING          OBJECTS             TRUTHVALUE
+CALLS               FRAMEOBJECTS        OPERATORS           TUPLELITERALS
+CLASSES             FRAMES              PACKAGES            TUPLES
+CODEOBJECTS         FUNCTIONS           POWER               TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRECEDENCE          TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS     
+DEBUGGING           LITERALS            SEQUENCES           
+
+help>  LISTS
+
+
+
+8.  How to use sublime text, it is easier and takes less load in the computer system
+
+
+9. More about variables in python
+
+What happens when we declare variable 
+>>> num = 5
+>>> num
+5
+
+ID of a variable: -
+>>> id(num)
+1675891730864
+>>> name = 'nitesh'
+>>> name
+'nitesh'
+>>> id(name)
+1675928436208
+>>> id('nitesh')
+1675928436208
+
+Assigning value of one variable to another, variables having same value (ID of an object), (Garbage collection): -
+>>> a =10
+>>> b =a
+>>> a
+10
+>>> b
+10
+>>> id(a)
+1675891731024
+>>> id(b)
+1675891731024
+>>> id(10)
+1675891731024
+>>> k =10
+>>> id(k)
+1675891731024
+>>> a = 9
+>>> id(a)
+1675891730992
+>>> k = a
+>>> id(k)
+1675891730992
+>>> b= 8
+
+Tags in python, Constants:-
+>>> PI = 3.14
+>>> PI
+3.14
+>>> PI = 3.15
+
+Type of a variable: -
+>>> type (PI)
+<class 'float'>
+>>> type(k)
+<class 'int'>
+
+
+10. Data types in python
+
+In this video we will see : - Data types in Python - None data type - Numeric data type - int, float, complex, bool - List data type - Tuple data type - Set - String - Range - Dictionary - Example of each data type in Python Github :- https://github.com/navinreddy20/Python-
+
+
+Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> num = 2.5
+>>> type (num)
+<class 'float'>
+>>> num = 5
+>>> type (num)
+<class 'int'>
+>>> num = 6+9j
+>>> type(num)
+<class 'complex'>
+>>> a = 5.6
+>>> b = int(a)
+>>> type(b)
+<class 'int'>
+>>> b
+5
+>>> k = float (b)
+>>> k
+5.0
+>>> k = 6
+>>> c = complex (b,k)
+>>> c
+(5+6j)
+>>> b<k
+True
+>>> bool = b <k
+>>> bool
+True
+>>> type (bool)
+<class 'bool'>
+>>> b>k
+False
+>>> int(true)
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    int(true)
+NameError: name 'true' is not defined
+>>> int(True)
+1
+>>> int(False)
+0
+>>> lst = [25,36,45,12]
+>>> type(lst)
+<class 'list'>
+>>> s = {25, 36,25,15,12,25}
+>>> s
+{25, 36, 12, 15}
+>>> type(s)
+<class 'set'>
+>>> t = (25,36,4,57,12)
+>>> type(t)
+<class 'tuple'>
+>>> str = "nitesh"
+>>> str
+'nitesh'
+>>> st = 'a'
+>>> type(st)
+<class 'str'>
+>>> range (10)
+range(0, 10)
+>>> range (0,10)
+range(0, 10)
+>>> list (range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> list(range (2,10,2))
+[2, 4, 6, 8]
+>>> type (range(10))
+<class 'range'>
+>>> d = {'nitesh','samsung','rahul','iPhone','kiran','oneplus'}
+>>> d
+{'oneplus', 'nitesh', 'kiran', 'iPhone', 'rahul', 'samsung'}
+>>> d = #
+SyntaxError: invalid syntax
+>>> d = {'nitesh':'Samsung', 'rahul':'iPhone', 'kiran':'oneplus'}
+>>> d
+{'nitesh': 'Samsung', 'rahul': 'iPhone', 'kiran': 'oneplus'}
+>>> d.keys()
+dict_keys(['nitesh', 'rahul', 'kiran'])
+>>> d.vlaues
+Traceback (most recent call last):
+  File "<pyshell#45>", line 1, in <module>
+    d.vlaues
+AttributeError: 'dict' object has no attribute 'vlaues'
+>>> d.values()
+dict_values(['Samsung', 'iPhone', 'oneplus'])
+>>> d['rahul']
+'iPhone'
+>>> d.get('kiran')
+'oneplus'
+>>>
+
+
+11. - Operators in Python - Arithmetic operators- Addition, Subtraction, Multiplication, Division - Assignment operators - Relational operators- Equals to, Greater than, Less than, Not equals, Greater than equals to, Less than equals to - Logical operators- AND, OR, NOT, Truth table of logical operators - Unary operators- Negation - Example of each operators using IDLE
+
+Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> y=2
+>>> x=3
+>>> x+y
+5
+>>> x-y
+1
+>>> x*y
+6
+>>> x/y
+1.5
+>>> d=8
+>>> x=8
+>>> x=x+2
+>>> x
+10
+>>> x+=2
+>>> x
+12
+>>> x*=3
+>>> x
+36
+>>> a,b=5,6
+>>> a
+5
+>>> b
+6
+>>> n=7
+>>> n
+7
+>>> -n
+-7
+>>> n=-n
+>>> n
+-7
+>>> a<b
+True
+>>> a>b
+False
+>>> a==b
+False
+>>> a=6
+>>> b=6
+>>> a==b
+True
+>>> a<=b
+True
+>>> a>=b
+True
+>>> a!=b
+False
+>>> b=7
+>>> a!=b
+True
+>>> a=5
+>>> b=4
+>>> a<8 and b<5
+True
+>>> a<8 and b<2
+False
+>>> a<8 or b<2
+True
+>>> x=True
+>>> x
+True
+>>> not x
+False
+>>>
+
+
+12.  Number System conversion in python - Binary - Decimal - Octal - Hexadecimal - Convert decimal to binary format - bin function in Python - Convert binary format to decimal format - Decimal to Octal conversion - Decimal to Hexadecimal conversion - oct function - hex function
+
+
+>>> 
+>>> bin(25)
+'0b11001'
+>>> 0b0101
+5
+>>> oct(25)
+'0o31'
+>>> hex(25)
+'0x19'
+>>> hex(10)
+'0xa'
+>>> 0xf
+15
+>>> 0b11
+3
+>>> 0b1100110101
+821
+>>> bin(410)
+'0b110011010'
+>>>
+
+13. How to swap 2 variables?
+
+A=5
+B=6
+
+A,B =B,A
+Print(A)
+Print(B)
+
+6
+5
+
+
+14. Lets work more on Operators. In this video we will see: - Bitwise Operators - Example of Bitwise Operators - Complement Operator - Tilde sign - Negative number, 2's Complement - Conversion to 1's complement and 2's complement - AND Operator - Finding Bitwise AND of numbers - OR Operator - Finding Bitwise OR of numbers - XOR Operator - Finding Bitwise XOR of numbers - Left Shift Operator - Right Shift Operator - Example of Left shift and Right Shift Operators
+
+>>> ~12
+-13
+>>> ~40
+-41
+>>> ~10
+-11
+>>> ~67
+-68
+>>> 12 & 13
+12
+>>> 12 | 13
+13
+>>> 25 & 30
+24
+>>> 12 ^ 13
+1
+>>> 25 ^ 90
+67
+>>> 90^25
+67
+>>> 10<<2
+40
+>>> 10>>2
+2
+>>>
+
+
+15. In this video we will see: Mathematical function - Built-in function - Call function - Import into Python - Floor function - Ceil function Pow function - Pi value printing - Finding the square root by the sqrt function - Changing the name of the built-in function Importing only a part  of math
+
+Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> x = sqrt (25)
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    x = sqrt (25)
+NameError: name 'sqrt' is not defined
+>>> import math
+>>> x = math.sqrt(25)
+>>> x
+5.0
+>>> x =math.sqrt(15)
+>>> x
+3.872983346207417
+>>> print(math.floor(2.9))
+2
+>>> print(amth.ceil(2.3))
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    print(amth.ceil(2.3))
+NameError: name 'amth' is not defined
+>>> print(math.ceil(2.3))
+3
+>>> print(math.pow(3,2))
+9.0
+>>> 3 ** 2
+9
+>>> print(math.pi)
+3.141592653589793
+>>> print(math.e)
+2.718281828459045
+>>> m.sqrt(25)
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    m.sqrt(25)
+NameError: name 'm' is not defined
+>>> math = m
+Traceback (most recent call last):
+  File "<pyshell#14>", line 1, in <module>
+    math = m
+NameError: name 'm' is not defined
+>>> import math as m
+>>> m.sqrt(25)
+5.0
+>>> from math import sqrt,pow
+>>> pow(4,5)
+1024.0
+>>> sqrt 3
+SyntaxError: invalid syntax
+>>> sqrt (4)
+2.0
+>>> help ('math')
+Help on built-in module math:
+
+NAME
+    math
+
+DESCRIPTION
+    This module provides access to the mathematical functions
+    defined by the C standard.
+
+FUNCTIONS
+    acos(x, /)
+        Return the arc cosine (measured in radians) of x.
+        
+        The result is between 0 and pi.
+    
+    acosh(x, /)
+        Return the inverse hyperbolic cosine of x.
+    
+    asin(x, /)
+        Return the arc sine (measured in radians) of x.
+        
+        The result is between -pi/2 and pi/2.
+    
+    asinh(x, /)
+        Return the inverse hyperbolic sine of x.
+    
+    atan(x, /)
+        Return the arc tangent (measured in radians) of x.
+        
+        The result is between -pi/2 and pi/2.
+    
+    atan2(y, x, /)
+        Return the arc tangent (measured in radians) of y/x.
+        
+        Unlike atan(y/x), the signs of both x and y are considered.
+    
+    atanh(x, /)
+        Return the inverse hyperbolic tangent of x.
+    
+    ceil(x, /)
+        Return the ceiling of x as an Integral.
+        
+        This is the smallest integer >= x.
+    
+    comb(n, k, /)
+        Number of ways to choose k items from n items without repetition and without order.
+        
+        Evaluates to n! / (k! * (n - k)!) when k <= n and evaluates
+        to zero when k > n.
+        
+        Also called the binomial coefficient because it is equivalent
+        to the coefficient of k-th term in polynomial expansion of the
+        expression (1 + x)**n.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+    
+    copysign(x, y, /)
+        Return a float with the magnitude (absolute value) of x but the sign of y.
+        
+        On platforms that support signed zeros, copysign(1.0, -0.0)
+        returns -1.0.
+    
+    cos(x, /)
+        Return the cosine of x (measured in radians).
+    
+    cosh(x, /)
+        Return the hyperbolic cosine of x.
+    
+    degrees(x, /)
+        Convert angle x from radians to degrees.
+    
+    dist(p, q, /)
+        Return the Euclidean distance between two points p and q.
+        
+        The points should be specified as sequences (or iterables) of
+        coordinates.  Both inputs must have the same dimension.
+        
+        Roughly equivalent to:
+            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
+    
+    erf(x, /)
+        Error function at x.
+    
+    erfc(x, /)
+        Complementary error function at x.
+    
+    exp(x, /)
+        Return e raised to the power of x.
+    
+    expm1(x, /)
+        Return exp(x)-1.
+        
+        This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
+    
+    fabs(x, /)
+        Return the absolute value of the float x.
+    
+    factorial(x, /)
+        Find x!.
+        
+        Raise a ValueError if x is negative or non-integral.
+    
+    floor(x, /)
+        Return the floor of x as an Integral.
+        
+        This is the largest integer <= x.
+    
+    fmod(x, y, /)
+        Return fmod(x, y), according to platform C.
+        
+        x % y may differ.
+    
+    frexp(x, /)
+        Return the mantissa and exponent of x, as pair (m, e).
+        
+        m is a float and e is an int, such that x = m * 2.**e.
+        If x is 0, m and e are both 0.  Else 0.5 <= abs(m) < 1.0.
+    
+    fsum(seq, /)
+        Return an accurate floating point sum of values in the iterable seq.
+        
+        Assumes IEEE-754 floating point arithmetic.
+    
+    gamma(x, /)
+        Gamma function at x.
+    
+    gcd(*integers)
+        Greatest Common Divisor.
+    
+    hypot(...)
+        hypot(*coordinates) -> value
+        
+        Multidimensional Euclidean distance from the origin to a point.
+        
+        Roughly equivalent to:
+            sqrt(sum(x**2 for x in coordinates))
+        
+        For a two dimensional point (x, y), gives the hypotenuse
+        using the Pythagorean theorem:  sqrt(x*x + y*y).
+        
+        For example, the hypotenuse of a 3/4/5 right triangle is:
+        
+            >>> hypot(3.0, 4.0)
+            5.0
+    
+    isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
+        Determine whether two floating point numbers are close in value.
+        
+          rel_tol
+            maximum difference for being considered "close", relative to the
+            magnitude of the input values
+          abs_tol
+            maximum difference for being considered "close", regardless of the
+            magnitude of the input values
+        
+        Return True if a is close in value to b, and False otherwise.
+        
+        For the values to be considered close, the difference between them
+        must be smaller than at least one of the tolerances.
+        
+        -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That
+        is, NaN is not close to anything, even itself.  inf and -inf are
+        only close to themselves.
+    
+    isfinite(x, /)
+        Return True if x is neither an infinity nor a NaN, and False otherwise.
+    
+    isinf(x, /)
+        Return True if x is a positive or negative infinity, and False otherwise.
+    
+    isnan(x, /)
+        Return True if x is a NaN (not a number), and False otherwise.
+    
+    isqrt(n, /)
+        Return the integer part of the square root of the input.
+    
+    lcm(*integers)
+        Least Common Multiple.
+    
+    ldexp(x, i, /)
+        Return x * (2**i).
+        
+        This is essentially the inverse of frexp().
+    
+    lgamma(x, /)
+        Natural logarithm of absolute value of Gamma function at x.
+    
+    log(...)
+        log(x, [base=math.e])
+        Return the logarithm of x to the given base.
+        
+        If the base not specified, returns the natural logarithm (base e) of x.
+    
+    log10(x, /)
+        Return the base 10 logarithm of x.
+    
+    log1p(x, /)
+        Return the natural logarithm of 1+x (base e).
+        
+        The result is computed in a way which is accurate for x near zero.
+    
+    log2(x, /)
+        Return the base 2 logarithm of x.
+    
+    modf(x, /)
+        Return the fractional and integer parts of x.
+        
+        Both results carry the sign of x and are floats.
+    
+    nextafter(x, y, /)
+        Return the next floating-point value after x towards y.
+    
+    perm(n, k=None, /)
+        Number of ways to choose k items from n items without repetition and with order.
+        
+        Evaluates to n! / (n - k)! when k <= n and evaluates
+        to zero when k > n.
+        
+        If k is not specified or is None, then k defaults to n
+        and the function returns n!.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+    
+    pow(x, y, /)
+        Return x**y (x to the power of y).
+    
+    prod(iterable, /, *, start=1)
+        Calculate the product of all the elements in the input iterable.
+        
+        The default start value for the product is 1.
+        
+        When the iterable is empty, return the start value.  This function is
+        intended specifically for use with numeric values and may reject
+        non-numeric types.
+    
+    radians(x, /)
+        Convert angle x from degrees to radians.
+    
+    remainder(x, y, /)
+        Difference between x and the closest integer multiple of y.
+        
+        Return x - n*y where n*y is the closest integer multiple of y.
+        In the case where x is exactly halfway between two multiples of
+        y, the nearest even value of n is used. The result is always exact.
+    
+    sin(x, /)
+        Return the sine of x (measured in radians).
+    
+    sinh(x, /)
+        Return the hyperbolic sine of x.
+    
+    sqrt(x, /)
+        Return the square root of x.
+    
+    tan(x, /)
+        Return the tangent of x (measured in radians).
+    
+    tanh(x, /)
+        Return the hyperbolic tangent of x.
+    
+    trunc(x, /)
+        Truncates the Real x to the nearest Integral toward 0.
+        
+        Uses the __trunc__ magic method.
+    
+    ulp(x, /)
+        Return the value of the least significant bit of the float x.
+
+DATA
+    e = 2.718281828459045
+    inf = inf
+    nan = nan
+    pi = 3.141592653589793
+    tau = 6.283185307179586
+
+FILE
+    (built-in)
+
+
+>>>
+
+16/17. In this video we will see: How to create .py files - Creating file in IDLE - Saving file - Running the code Ways to run the code - Running code from IDE - Running code from Command prompt - Writing code for addition of two numbers Shortcut to run code - Using PyCharm IDE - Creating new project in PyCharm IDE - Interface introduction - Creating py file - Running the project - Debugging the code
+
+x=5
+y=6
+z = x+y
+print(z)
+
+"C:\Users\Nitesh Jaiswal\AppData\Local\Programs\Python\Python39\python.exe" "C:/Users/Nitesh Jaiswal/Desktop/Practice python.py"
+11
+
+Process finished with exit code 0
+
+18. In this video we will see: - How to get user input - print function - input function - printing input message - Type of input data When to use index value - eval function Passing values from command line - Argument line input
+
+x= int(input ("enter 1st number"))
+y= int(input("enter 2nd number"))
+z = x+y
+print(z)
+
+"C:\Users\Nitesh Jaiswal\AppData\Local\Programs\Python\Python39\python.exe" "C:/Users/Nitesh Jaiswal/Desktop/Practice python.py"
+enter 1st number12
+enter 2nd number14
+26
+
+Process finished with exit code 0
+
+ch = input('enter a char')[0]
+print (ch)
+
+"C:\Users\Nitesh Jaiswal\AppData\Local\Programs\Python\Python39\python.exe" "C:/Users/Nitesh Jaiswal/Desktop/Practice python.py"
+enter a charpqr
+p
+
+Process finished with exit code 0
+
+result = eval(input('enter a char'))
+print (result)
+
+"C:\Users\Nitesh Jaiswal\AppData\Local\Programs\Python\Python39\python.exe" "C:/Users/Nitesh Jaiswal/Desktop/Practice python.py"
+enter a char2 + 6 - 1
+7
+
+Process finished with exit code 0
+
+>>> IDLE > Save new file > MyCode.PY
+
+import sys
+
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+
+z = x + y
+print (z)
+
+Windows + R > Type > CMD > 
+
+Microsoft Windows [Version 10.0.10586]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Users\Nitesh Jaiswal>cd desktop
+
+C:\Users\Nitesh Jaiswal\Desktop>python MyCode.py 5 7
+12
+
+C:\Users\Nitesh Jaiswal\Desktop>
+
+
+19. In this video we will see: - Conditional statements - If statement - Else statement Debugging code - Nested if - elif and else statement
+
+#if True:
+#     print("Im right")
+
+# if False:
+#     print("Im right")
+#     print("Bye")
+
+
+# x = 4
+# r = x % 2
+#
+# if r==0:
+#     print("Even")
+#     if x>5:
+#         print("Great")
+#     else:
+#         print("Not so great")
+#
+# else:
+#     print("Odd")
+#
+# print("Bye")
+
+
+x = 5
+
+if x==1:
+    print("one")
+
+elif(x==2):
+    print("Two")
+
+elif(x==3):
+    print("Three")
+
+elif(x==4):
+    print("Four")
+
+else:
+    print("Wrong Input")
+
+---------
+Home-work:- Take 6 values from user and find the greatest number from them:-
+x, y, z, p, q, r = int(input("enter 1st number")), int(input("enter 2nd number")), int(input("enter 3rd number")), int(input("enter 4th number")), int(input("enter 5th number")), int(input("enter 6th number"))
+
+if x>y and x>z and x>p and x>q and x>r:
+    print(x)
+elif y>z and y>p and y>q and y>r:
+    print(y)
+elif z>p and z>q and z>r:
+    print(z)
+elif p>q and p>r:
+    print(p)
+elif q>r:
+    print(q)
+else:
+    print(r)
+
+Home-work:- Take 3 values from user and find the greatest number from them:-
+x, y, z = int(input("enter 1st number")), int(input("enter 2nd number")), int(input("enter 3rd number"))
+
+if x>y and x>z:
+    print(x)
+elif y>z :
+    print(y)
+else:
+    print(z)
+
+Another way of doing it:-
+
+x, y, z = int(input("enter 1st number")), int(input("enter 2nd number")), int(input("enter 3rd number"))
+nums = [x,y,z]
+
+print (max(nums))
+
+
+Check if the number is positive or negative:-
+
+x = int(input("enter a number"))
+
+if x > 0 and x != 0:
+    print("number is positive")
+elif x == 0:
+    print("number is neither positive not negative")
+else:
+    print("number is negative")
+
+
+
+20. In this video we will see: - Loops - Why we need loop - Types of loop - While loop - Syntax of while loop Example of while loop - Nested while loop has below 3 rules:-
+1. Initialization
+2. Condition
+3. Increment/Decrement 
+i = 1
+while i <= 5:
+    print("Telesko ", end="")
+    j = 1
+    while j <= 4:
+        print("Rocks ", end="")
+        j = j + 1
+    i = i + 1
+    print()
+
+Telesko Rocks Rocks Rocks Rocks 
+Telesko Rocks Rocks Rocks Rocks 
+Telesko Rocks Rocks Rocks Rocks 
+Telesko Rocks Rocks Rocks Rocks 
+Telesko Rocks Rocks Rocks Rocks
+
+
+21. In this video we will see: - For loop - Difference between for loop and while loop - Where to use for loop - Syntax of for loop Example of for loop - Nested for loop - For loop with collection - For loop with range
+x = ['Nitesh', 29, 5.8]
+
+for i in x:
+    print(i)
+
+Nitesh
+29
+5.8
+
+x = 'NITESH'
+
+for i in x:
+    print(i)
+
+N
+I
+T
+E
+S
+H
+----------
+for i in [2,6,'Nitesh']:
+    print(i)
+
+2
+6
+Nitesh
+
+for i in range(10):
+    print(i)
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+for i in range(11, 21, 1):
+    print(i)
+
+11
+12
+13
+14
+15
+16
+17
+18
+19
+
+for i in range(20, 10, -1):
+    print(i)
+20
+19
+18
+17
+16
+15
+14
+13
+12
+11
+
+for i in range(1, 21):
+    if i % 5 != 0:
+        print(i)
+
+1
+2
+3
+4
+6
+7
+8
+9
+11
+12
+13
+14
+16
+17
+18
+19
+for i in range(1, 21):
+    if i % 5 == 0:
+        print(i)
+
+5
+10
+15
+20
+
+22. In this video we will see: Break keyword in Python - Jumping out of the block or loop - Continue keyword - Pass in Python
+av = 6
+x = int(input("How many candies you want?"))
+
+i = 1
+
+while i <= x:
+    if i > av:
+        print("out of stock")
+        break
+        
+    print("candy")
+    i+=1
+
+print("bye")
+
+How many candies you want ?7
+candy
+candy
+candy
+candy
+candy
+candy
+out of stock
+bye
+for i in range (1, 10):
+    if i % 3 != 0 and i % 5 != 0:
+        print(i)
+1
+2
+4
+7
+8
+for i in range (1, 16):
+    if i % 3 == 0 and i % 5 == 0:
+        continue
+    print(i)
+
+print("bye")
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+Bye
+
+for i in range (1, 16):
+    if i % 2 != 0:
+        pass
+    else:
+        print(i)
+
+print("bye")
+
+2
+4
+6
+8
+10
+12
+14
+Bye
+
+Home work:-
+Check a given number is prime or not?
+x = int(input("enter a number please"))
+if x == 0 or x < 0:
+    print("Enter a number greater than zero please")
+elif x > 0:
+    if x % 2 != 0 or x == 2:
+        print("It is a prime number please")
+    else:
+        print("It is not a prime number please")
+enter a number please-1
+Please enter a positive integer
+enter a number please 0
+Please enter a number greater than 0
+enter a number please11
+it is a prime number
+enter a number please14
+it is not a prime number
+for num in range(100, 200):
+    if all(num%i!=0 for i in range(2,num)):
+           print(num)
+
+
+for i in range(1, 30):
+    for j in range(2, i):
+        if i % j == 0:
+            print(i, "not prime")
+            break
+    else:
+        print(i, "Prime")
+#          
+1 Prime
+2 Prime
+3 Prime
+4 not prime
+5 Prime
+6 not prime
+7 Prime
+8 not prime
+9 not prime
+10 not prime
+11 Prime
+12 not prime
+13 Prime
+14 not prime
+15 not prime
+16 not prime
+17 Prime
+18 not prime
+19 Prime
+20 not prime
+21 not prime
+22 not prime
+23 Prime
+24 not prime
+25 not prime
+26 not prime
+27 not prime
+28 not prime
+29 Prime
+    
+
+x = 7
+for i in range(2, x):
+    if x % 2 == 0:
+        print("not prime")
+        break
+else:
+    print("prime")
+prime
+
+Print first 50 fibonacci numbers:- (0, 1, 1,  2, 3, 5, 8, 13, 21, 34)
+x = 0
+y = 1
+print (x)
+print (y)
+i = 1
+while i <= 48:
+    z = x + y
+    print(z)
+    x = y
+    y = z
+    i+=1
+or 
+
+n1 = 0
+n2 = 1
+print(n1)
+print(n2)
+i = 1
+for i in range(1,49):
+    n3 = n1 + n2
+    print(n3)
+    n1 = n2
+    n2 = n3
+    i+=1
+
+Or
+
+
+lst = [0,1]
+for i in range(10):
+    lst.append(lst[-1] + lst[-2])
+    print(lst)
+
+[0, 1, 1]
+[0, 1, 1, 2]
+[0, 1, 1, 2, 3]
+[0, 1, 1, 2, 3, 5]
+[0, 1, 1, 2, 3, 5, 8]
+                                              Or
+x = int(input("enter a number for fib. sequence"))
+num1 = 0
+num2 = 1
+print("your 1st", x, "fib sequence are:-", num1,num2, end = " ")
+
+for i in range (0, x-2):
+    num3 = num1 + num2
+    print(num3, end=" ")
+    num1 = num2
+    num2 = num3
+
+Enter a number for fib. sequence11
+Your 1st 11 fib sequence are:- 0 1 1 2 3 5 8 13 21 34 55
+-----
+lst = [0,1]
+for i in range(51):
+    lst.append(lst[-1] + lst[-2])
+    print(end="")
+
+for i in lst:
+    print(i, end=" ")
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229 832040 1346269 2178309 3524578 5702887 9227465 14930352 24157817 39088169 63245986 102334155 165580141 267914296 433494437 701408733 1134903170 1836311903 2971215073 4807526976 7778742049 12586269025 20365011074 32951280099
+
+
+23. In this video we will see: - Printing patterns - Using loop - For loop
+
+for j in range(4):
+    for i in range(4):
+        print("# ", end="")
+    print()
+
+# # # # 
+# # # # 
+# # # # 
+# # # #
+
+----
+
+for i in range(4):
+    for j in range(i+1):
+        print("# ", end="")
+    print()
+
+# 
+# # 
+# # # 
+# # # #
+
+---
+
+for i in range(4):
+    for j in range(4-i):
+        print("# ", end="")
+    print()
+####
+###
+## 
+#
+
+
+
+str1 = 'ABCD'
+str2 = 'PQR'
+
+for i in range(4):
+    print(str1[:i+1] + str2[i:])
+print()
+
+APQR
+ABQR
+ABCR
+ABCD
+----------
+
+num1 = '1234'
+for i in range(4):
+    print(num1[:4-i] and num1[i-4:])
+print()
+
+1234
+234
+34
+4
+---------
+for i in range(1, 5):
+    print(i, end="")
+    for j in range (1, 5-i):
+        print(i+j, end="")
+    print()
+
+1234
+234
+34
+4
+----
+24. For Else in Python:-
+x = [11, 12, 13, 14 ,16]
+for i in x:
+    if i % 5 == 0:
+        print(i)
+        break
+else:
+    print("not found")
+
+not found
+
+25. Prime number or not:-
+x = int(input("enter a number please"))
+if x == 0 or x < 0:
+    print("Enter a number greater than zero please")
+elif x > 0:
+    if x % 2 != 0 or x == 2:
+        print("It is a prime number please")
+    else:
+        print("It is not a prime number please")
+
+
+26. Arrays:-
+In this video we will see: - Why Array? - Advantage of Array in Python - When to use Array - Importing module - Creating Array Type of array - Type code Storing value in array - Printing array values - buffer_info function - Printing type code - reverse function - Printing value of specific index Printing values using loop - Printing length of array - Creating array of unicode value - Creating new array by copying existing array - Copying type from old array
+
+--------------------------------------------------------------------------------
+
+
+from array import *
+
+vals = array('i',[5,9,-8,4,2])
+
+print(vals.buffer_info())
+print(vals.typecode)
+vals.reverse()
+
+for e in vals:
+    print(e, end = " ")
+
+(1840408988176, 5)
+i
+2 4 -8 9 5
+
+
+from array import *
+
+vals = array('i',[5, 9, 8, 4, 2])
+newarr = array(vals.typecode, (a*a for a in vals))
+
+for i in newarr:
+    print(i, end = " ")
+
+or
+from array import *
+
+vals = array('i',[5, 9, 8, 4, 2])
+newarr = array(vals.typecode, (a*a for a in vals))
+
+e=0
+while e < len(newarr):
+    print(newarr[e], end = " ")
+    e+=1
+
+25 81 64 16 4
+
+?	Write the code to sort the array in ascending order.
+
+from array import *
+
+vals =  array('I', [0,5,10,3,45,67,23])
+print(sorted(vals))
+
+[0, 3, 5, 10, 23, 45, 67]
+
+?	Write a code to find the factorial of the given number.
+from array import *
+vals = array('i',[1,2,3,4,5])
+i = vals[1] * vals[2] * vals[3] * vals[4]
+print("The factorial of", vals[4], "is =", i)
+The factorial of 5 is = 120
+				Or
+x = int(input("Enter a number for fib. sequence:- "))
+num1 = 1
+for i in range (1, x+1):
+    num1 = i * num1
+print("The factorial of", x, "is:-", num1)
+
+
+Enter a number for fib. sequence5
+The fatorial of 5 is:- 120
+
+27. In this video we will see: Accepting values from user and store them in Array in python - Creating blank array Asking length of array from user and accepting the values - Printing index of array value manually Printing index value of user entered value - Printing index of array value by function
+from array import *
+
+arr = array('i', [])
+n = int(input("Enter the length of the array: "))
+
+for i in range (n):
+    x = int(input("Enter the next value: "))
+    arr.append(x)
+print(arr)
+
+val = int(input("Enter the value to search"))
+
+k = 0
+for e in arr:
+    if e == val:
+        print(k)
+        break
+    k+=1
+
+				or
+from array import *
+
+arr = array('i', [])
+n = int(input("Enter the length of the array: "))
+
+for i in range (n):
+    x = int(input("Enter the next value: "))
+    arr.append(x)
+print(arr)
+
+val = int(input("Enter the value to search"))
+
+print(arr.index(val))
+
+
+Enter the length of the array: 3
+Enter the next value: 23
+Enter the next value: 34
+Enter the next value: 45
+array('i', [23, 34, 45])
+Enter the value to search45
+2
+
+?	Create an array with 5 values and delete the value at index number 2 without using an in-built function.
+
+from array import *
+arr = array('i', [])
+n = int(input("Enter the length of the array: "))
+
+for i in range(n):
+    x = int(input("Enter the next value: "))
+    arr.append(x)
+print(arr)
+val = int(input("Enter the value you want to search and delete: "))
+k = 0
+for e in arr:
+    if e == val:
+        print(k)
+        if k == 2:
+            del arr[k]
+        else:
+            print("Enter the index value 2 to delete it")
+    k+=1
+print(arr)
+	
+Enter the length of the array: 4
+Enter the next value: 1
+Enter the next value: 2
+Enter the next value: 3
+Enter the next value: 4
+array('i', [1, 2, 3, 4])
+Enter the value you want to search and delete: 3
+2
+array('i', [1, 2, 4])
+
+
+
+
+
+?	Write a code to reverse an array or list without using an in-built function
+
+list = [23,34,45,5,2345,3456,7,3456,235,56]
+
+def rev(list):
+    print( list[::-1])
+
+rev(list)
+
+#
+Or
+
+from array import *
+
+arr = array('i', [])
+n = int(input("Enter the length: "))
+for i in range(n):
+    x = int(input("Enter the next value: "))
+    arr.append(x)
+print(arr)
+print(arr[::-1])
+
+Enter the length: 4
+Enter the next value: 1
+Enter the next value: 2
+Enter the next value: 3
+Enter the next value: 4
+array('i', [4, 3, 2, 1])
+
+
+28. Installing Numpy:-
+from numpy import*
+arr = array([1,2,3,4], 'int')
+print(arr)
+[1 2 3 4]
+-------------
+-----------------------------------------------------
+29. Ways of creating array with numpy:-
+
+from numpy import *
+
+# arr = array([1,2,3,4,5],float)
+#
+# print(arr.dtype)
+# print(arr)
+
+# arr = linspace(0,15)
+# arr = arange(1,15,2)
+
+# arr = logspace(1,40,5)
+# print('%.2f' %arr[4])
+
+arr = ones(5,int)
+print(arr)
+-----------------------------------------------------------------------------------------------
+
+30. Copying an array in python:- 
+from numpy import *
+
+# arr1 = array([1,2,3,4,5])
+# arr2 = array([6,1,9,3,2])
+#
+# arr = arr1 + arr2
+#
+# print(arr)
+
+
+
+# arr1 = array([1,2,3,4,5])
+# print(sin(arr1))
+
+
+# arr1 = array([1,2,3,4,5])
+# print(cos(arr1))
+
+
+# arr1 = array([1,2,3,4,5])
+# print(log(arr1))
+
+
+# arr1 = array([1,2,3,4,5])
+# print(sqrt(arr1))
+
+
+# arr1 = array([1,2,3,4,5])
+# print(sum(arr1))
+
+
+# arr1 = array([1,2,3,4,5])
+# print(min(arr1))
+
+
+# arr1 = array([1,2,3,4,5])
+# print(max(arr1))
+
+
+# arr1 = array([1,2,3,4,5])
+# arr2 = array([6,1,9,3,2])
+# print(concatenate([arr1,arr2]))
+
+
+# arr1 = array([2,6,8,1,3])
+# arr2 = arr1
+#
+# print(arr1)
+# print(arr2)
+#
+# print(id(arr1))
+# print(id(arr2))
+
+
+arr1 = array([2,6,8,1,3])
+# arr2 = arr1.view()
+arr2 = arr1.copy()
+
+arr1[1] = 7
+
+print(arr1)
+print(arr2)
+
+print(id(arr1))
+print(id(arr2))
+===============================
+> Write a code to add 2 arrays using a forloop
+from numpy import *
+
+arr1 = array ([1,2,3,4,5])
+arr2 = array ([6,7,8,9,10])
+
+for i in range(4):
+    arr3 = arr1 + arr2
+print(arr3)				
+
+[ 7  9 11 13 15]
+						Or
+from numpy import *
+
+a = array ([1,2,3,4,5])
+
+for i in range(0,5):
+    print(a[i]+5, end = " ")
+
+or 
+from numpy import *
+
+a = arange (1,6)
+
+for i in a:
+    print(i+5, end = " ")
+
+
+6 7 8 9 10
+
+****************
+> Write a code to find out the maximum value for an array without using in-built function.
+from numpy import *
+
+a = array ([1,2,3,5])
+
+for i in range(1):
+    if a[0] > a[1] and a[0] > a[2] and a[0] > a[3]:
+        print(a[0])
+    elif a[1] > a[2] and a[1] > a[3]:
+        print(a[1])
+    elif a[2] > a[3]:
+        print(a[2])
+    else:
+        print(a[3])
+5
+
+				Or
+from numpy import *
+
+a = array ([23,4,65,45,29,99,100,2,3485,11234,34])
+x = a[0]
+y = x
+
+for i in range(len(a)-1):
+    if a[i] < a[i+1]:
+        x = a[i+1]
+        if x > y:
+            y = x
+print("The max is: ", y)
+
+#11234
+				Or
+
+# Asking from user and printing the maximum value:-
+
+from array import *
+
+a = array ('i', [])
+n = int(input("Enter the length of the array: "))
+for e in range(n):
+    z = int(input("Enter the next value: "))
+    a.append(z)
+print(a)
+
+x = a[0]
+y = x
+
+for i in range(len(a)-1):
+    if a[i] < a[i+1]:
+        x = a[i+1]
+        if x > y:
+            y = x
+print("The max is: ", y)
+
+
+==============================================================
+31. Working with matrix in python:-
+Multidimensional array we import numpy: 
+
+from numpy import *
+
+# arr1 = array([
+#                 [1,2,3],
+#                 [4,5,6]
+#
+#              ])
+#
+# print(arr1.ndim)
+# print(arr1.shape)
+# print(arr1.size)
+#
+# arr2 = arr1.flatten()
+# print(arr2)
+
+
+
+
+# arr1 = array([
+#                 [1,2,3,6,2,9],
+#                 [4,5,6,7,5,3]
+#
+#              ])
+#
+# arr2 = arr1.flatten()
+# arr3 = arr1.reshape(2,2,3)
+# print(arr3)
+
+
+
+# m = matrix('1 2 3; 6 4 5;1 6 7')
+# # print(diagonal(m))
+# # print(m.min())
+# print(m.max())
+
+m1 = matrix('1 2 3; 6 4 5;1 6 7')
+m2 = matrix('1 2 3; 6 8 5;2 6 7')
+
+m3 = m1 * m2;
+print(m3)
+#
+[[19 36 34]
+ [40 74 73]
+ [51 92 82]]
+
+>. Write a code to multiply 2 matrices using 2 D array and using loops:
+from numpy import*
+
+m = int(input('1st Matrix:- Enter the no. of rows: '))
+n = int(input('1st Matrix:- Enter the no. of columns: '))
+x = matrix([0 for i in range(m*n)])
+for i in range(m*n):
+    x[0,i] = int(input("Enter the element for Matrix 1: "))
+
+r = int(input('2nd Matrix:- Enter the no. of rows: '))
+p = int(input('2nd Matrix:- Enter the no. of columns: '))
+y = matrix([0 for i in range(r*p)])
+for i in range(r*p):
+    y[0,i] = int(input("Enter the element for Matrix 2: "))
+
+m1 = x.reshape(m,n)
+m2 = y.reshape(r,p)
+m3 = m1 * m2
+print("First Matrix is below:- \n", m1, "\n", "Second Matrix is below:- \n", m2, "\n", "Multiplication of Matrix:- \n", m3)
+#############################
+
+1st Matrix:- Enter the no. of rows: 2
+1st Matrix:- Enter the no. of columns: 2
+Enter the element for Matrix 1: 34
+Enter the element for Matrix 1: 45
+Enter the element for Matrix 1: 23
+Enter the element for Matrix 1: 12
+2nd Matrix:- Enter the no. of rows: 2
+2nd Matrix:- Enter the no. of columns: 2
+Enter the element for Matrix 2: 21
+Enter the element for Matrix 2: 32
+Enter the element for Matrix 2: 43
+Enter the element for Matrix 2: 54
+First Matrix is below:- 
+ [[34 45]
+ [23 12]] 
+ Second Matrix is below:- 
+ [[21 32]
+ [43 54]] 
+ Multiplication of Matrix:- 
+ [[2649 3518]
+ [ 999 1384]]
+ 
+32. Functions in python:-
+
+# def greet():
+#     print("Hello")
+#     print("Good Morning")
+#
+# greet()
+[13:07, 4/6/2021] Nitesh Jaiswal: # def greet():
+#     print("Hello")
+#     print("Good Morning")
+#
+# def add(x,y):
+#     c = x+y
+#     return c
+#
+# greet()
+# result = add(5,4)
+# print(result)
+
+def add_sub(x,y):
+    c = x+y
+    d = x-y
+    return c,d
+
+result1,result2 = add_sub(5,4)
+print(result1, result2)
+
+
+33. Function Arguments in python:-
+#
+# def update(x):
+#
+#     print(id(x))
+#
+#     x = 8
+#     print(id(x))
+#     print("x ", x)
+#
+# a = 10
+# print(id(a))
+# update(a)
+# print("a ", a)
+
+def update(lst):
+
+    print(id(lst))
+
+    lst[1] = 25
+    print(id(lst))
+    print("x ", lst)
+
+lst = [10,20,30]
+print(id(lst))
+update(lst)
+print("lst ", lst)
+
+34. Types of Arguments in python:-
+#
+# def person(name , age):
+#     print(name)
+#     print(age)
+#
+# person(age=28,name='navin')
+
+
+
+# def person(name , age=18):
+#     print(name)
+#     print(age)
+#
+# person('navin',28)
+
+def sum(*b):
+
+   c = 0
+   for i in b:
+       c = c + i
+
+   print(c)
+
+sum(5,6,34,78)
+#
+def sum(*b, x = ''):
+    c = 0
+    for i in b:
+        c = c + i
+    print(c,x)
+    
+
+sum(5,4,5,4,45,4,5,3,3,4,5,5, x = "NJ")
+
+92NJ
+
+
+35.  Keyworded variable length arguments in python:- **kwargs:-
+def person(name, **data):
+#     print(name)
+#     print(data)
+# person('navin',age=28,city='Mumbai',mob=9865432)
+
+
+def person(name, **data):
+    print(name)
+    for i,j in data.items():
+        print(i,j)
+person('navin',age=28,city='Mumbai',mob=9865432)
+
+36. Global keyword in python:- Global vs local variable:-
+
+a = 10
+print(id(a))
+def something():
+    a = 9
+    x = globals()['a']
+    print(id(x))
+    print("in fun ",a)
+
+    globals()['a'] = 15
+
+something()
+
+print("outside ",a)
+
+37. Pass list to a function in python:- 
+def count(list):
+    even = 0
+    odd = 0
+    for i in list:
+        if i%2 == 0:
+            even+=1
+        else:
+            odd+=1
+    return even, odd
+
+list = [25,26,27,28,29,30,31,32,33,34,35]
+e, o = count(list)
+print("Even: {} and Odd : {}".format(e, o))
+
+Even: 5 and Odd : 6
+>. Take 10 names from the user, then count and display the number of users who has length more than 5 letters:-
+def names():
+    list = []
+    for i in range(0,10):
+        x = str(input("Enter the next name: "))
+        list.append(x)
+
+    size=0
+    for i in list:
+        if len(i) > 5:
+            print(i)
+            size+=1
+
+    print("The strings which has length more than 5 are: ", size)
+
+names()
+
+38. Fibonacci Sequence:- 
+def fib(n) :
+    a = 0
+    b = 1
+    if n == 1:
+        print(a, end = " ")
+    else:
+        print(a, end = " ")
+        print(b, end = " ")
+        for i in range (2, n):
+            c = a + b
+            a = b
+            b = c
+            if c < 100:
+                print(c, end = " ")
+                
+fib(100)
+
+0 1 1 2 3 5 8 13 21 34 55 89
+
+
+39. Factorial of a number:-
+
+def fact(n) :
+    x = 1
+    for i in range(1, n+1):
+        x = i * x
+    return x
+
+x = 5
+result = fact(x)
+print(result)
+
+120
+
+
+
+40. Recursion:- 
+import sys
+
+sys.setrecursionlimit(2000)
+print(sys.getrecursionlimit())
+
+i = 0
+
+def greet():
+    global i
+    i+=1
+    print("Hello ",i)
+    greet()
+
+greet()
+
+41. Factorial using Recursion:-
+def fact(n):
+    if(n==0):
+        return 1
+    return n * fact(n-1)
+result = fact(5)
+print(result)#
+120
+
+42. Anonymous functions|| Lambda:-
+# def square(a):
+#     return a * a
+# result = square(5)
+# print(result)
+f = lambda a,b : a+b
+result = f(5,6)
+print(result)
+#
+f = lambda a,b: a*b
+
+result = f(5,9)
+print(result)
+45
+###
+f = lambda a:  a*6
+result = f(7)
+print(result)
+42
+
+43. Filter map reduce.
+def is_even(n):
+    return n % 2 == 0
+
+nums = [2, 3, 4, 5, 6, 7, 8, 9]
+evens = list(filter(is_even, nums))
+print(evens)
+
+[2, 4, 6, 8]
+or
+from functools import reduce
+
+nums = [2, 3, 4, 5, 6, 7, 8, 9]
+
+evens = list(filter(lambda a: a%2 == 0, nums))
+doubles = list(map(lambda a: a*2, evens))
+sum = reduce(lambda a,b: a+b, doubles)
+print(evens)
+print(doubles)
+print(sum)
+
+[2, 4, 6, 8]
+[4, 8, 12, 16]
+40
+
+44. Decorators:-
+def div(a, b):
+    print(int(a / b))
+
+
+def smart_div(func):
+    def inner(a, b):
+        if a < b:
+            a, b = b, a
+        return func(a, b)
+
+    return inner
+
+
+div = smart_div(div)
+div(2, 10)
+#
+5
+45. Modules:-
+MyCode.py   >>>>>>
+from Calc import*
+
+a = 9
+b = 7
+c = add(a,b)
+d = div(a,b)
+m = mul(a,b)
+s = sub(a,b)
+print(c)
+print(m)
+print(s)
+print('%.2f'%d)
+
+Calc.py   >>>>>>
+def add(a,b):
+    return a+b
+def sub(a,b):
+    return a-b
+def mul(a,b):
+    return a*b
+def div(a,b):
+    return a/b
+#
+16
+63
+2
+1.29
+
+
+
+46, 47. Special Variable __name__:-
+MyCode >>>>
+def main():
+    print("Hello")
+    print("Welcome User")
+
+if __name__ == "__main__":
+    main()
+
+Calc >>>>
+import MyCode
+
+print("Its time to calculate")
+#
+Its time to calculate
+Or
+Calc >>>
+
+def add(a,b):
+    print("The Addition is: " ,a+b)
+def sub(a,b):
+    print("The sub is: " ,a-b)
+def div(a,b):
+    print("The div is: " ,a/b)
+def mul(a,b):
+    print("The mul is: " ,a*b)
+def fact(n):
+    if n==0:
+        return 1
+    return n * fact(n-1)
+
+def main():
+    add(6,4)
+    sub(6,4)
+    div(6,4)
+    mul(6,4)
+    print("The Factorial is: ",fact(7))
+
+if __name__ == "__main__":
+    main()
+##
+MyCode >>>>
+from Calc import add
+
+def result_add():
+    add(12,6)
+
+result_add()
+#
+The Addition is:  18
+
+
+48. OOP – Object oriented programming:-  
+
+Python OOPs Concepts
+Like other general-purpose programming languages, Python is also an object-oriented language since its beginning. It allows us to develop applications using an Object-Oriented approach. In Python, we can easily create and use classes and objects.
+An object-oriented paradigm is to design the program using classes and objects. The object is related to real-word entities such as book, house, pencil, etc. The oops concept focuses on writing the reusable code. It is a widespread technique to solve the problem by creating objects.
+Major principles of object-oriented programming system are given below.
+	?	Class
+	?	Object
+	?	Method
+	?	Inheritance
+	?	Polymorphism
+	?	Data Abstraction
+	?	Encapsulation
+
+49. Class and Object:-
+class computer():
+
+    def config(self):
+        print('i5, 16GB RAM, 1TB HDD')
+
+b = computer()
+c = computer()
+computer.config(b)
+computer.config(c)
+b.config()
+c.config()
+i5, 16GB RAM, 1TB HDD
+i5, 16GB RAM, 1TB HDD
+i5, 16GB RAM, 1TB HDD
+i5, 16GB RAM, 1TB HDD
+
+50. __init__method:-
+class computer():
+
+    def __init__(self,cpu,ram):
+        self.cpu=cpu
+        self.ram=ram
+
+    def config(self):
+        print('The Configuration of Computer is:- ', self.cpu, self.ram)
+
+b = computer('i5, Acer',16)
+c = computer('Rayzen, i8', 8)
+b.config()
+c.config()
+
+The Configuration of Computer is:-  i5, Acer 16
+The Configuration of Computer is:-  Rayzen, i8 8
+
+51. Constructor, self and Comparing objects:-
+class computer:
+
+    def __init__(self):
+        self.name = "Boo"
+        self.age = 29
+
+
+    def compare(self, other):
+        if self.age == other.age:
+            return True
+        else:
+            return False
+
+c1 = computer()
+c1.age = 30
+c2 = computer()
+
+if c1.compare(c2):
+    print("They are same")
+else:
+    print("The are different")
+
+print(c1.name, c1.age)
+print(c2.name, c2. age)
+
+The are different
+Boo 30
+Boo 29
+
+52. Types of variables:-
+> Class Variables – use class namespace, and it would change the variable for all, also known as static variable.
+> Instance Variable – it is not permanent, the moment you change it outside the class, it would affect the variable. 
+
+class car:
+
+    wheels = 4
+    def __init__(self):
+        self.mil = 10
+        self.com = "BMW"
+
+c1 = car()
+c2 = car()
+
+c1.mil = 8
+car.wheels = 5
+
+print(c1.com, c1. mil, c1.wheels)
+print(c2.com, c2. mil, c2.wheels)
+
+BMW 8 5
+BMW 10 5
+
+53. Types of methods:-
+
+Types of Instance variable :- Accessors (Getters) and Mutators (Setters) Method:- If you want to fetch the value, use accessor, if you want to change or modify the value, use mutators; Getters get the value or fetch the value and Setters set the value or modify it. Getters and setters. 
+
+class Student:
+    school = 'Telesko'
+
+    def __init__(self, m1, m2, m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+
+    def avg(self):
+        return (self.m1 + self.m2 + self.m3) / 3
+
+    def get_m1(self): #acceesor - Getter
+        return self.m1
+    def set_m1(self, value): #Mutator - setter
+        self.m1 = value
+
+    @classmethod # decorators (class Method)
+    def getschool(cls):
+        return cls.school
+
+    @staticmethod #Special Decorator - Static Method
+    def info(): #If you do not want to relate it to a class and object, keep it BLANK - it is nothing to do with class or instance variables
+        print("This is Student Class.. in abc module")
+
+s1 = Student(34, 67, 32)
+s2 = Student(89, 32, 11)
+
+print(s1.avg())
+print(s2.avg())
+print(s1.get_m1())
+print(s2.set_m1(''))
+print(Student.getschool())
+Student.info()
+#
+44.333333333333336
+44.0
+34
+None
+Telesko
+This is Student Class.. in abc module
+
+54. Inner class:-
+
+class Student:
+
+    def __init__(self, name, rollno):
+        self.name = name
+        self.rollno = rollno
+        self.lappy = self.Laptop() #object is created inside the outer class - outer class is 'Student'
+
+    def show(self):
+        print(self.name, self.rollno)
+        self.lappy.show()
+
+    class Laptop: # class inside the class is called as inner class - CLASS inside a CLASS
+
+        def __init__(self): # create the object outside of inner class
+            self.brand = 'HP'
+            self.cpu = 'i5'
+            self.ram = 8
+
+        def show(self):
+            print(self.brand, self.cpu, self.ram)
+
+
+s1 = Student('Navin', 2)
+s2 = Student('Jenny', 3)
+s1.show()
+s2.show()
+
+#lap1 = s1.lap
+#lap2 = s2.lap
+#or another way is: you can create an object of inner class inside the outer class or you can create an object of innner class outside the outer class
+#provided you use the outer class name to call it with inner class
+#lappy1 = Student.Laptop()
+#lappy2 = Student.Laptop()
+#
+Navin 2
+HP i5 8
+Jenny 3
+HP i5 8
+
+55. Inheritance:- Parent to child Inheritance:-
+
+class A:
+    def feature1(self):
+        print("Feature 1 is working")
+    def feature2(self):
+        print("Feature 2 is working")
+
+class B:
+    def feature3(self):
+        print("Feature 3 is working")
+    def feature4(self):
+        print("Feature 4 is working")
+
+class C(A,B):
+    def feature5(self):
+        print("Feature 5 is working")
+
+c3 = C()
+c3.feature1()
+c3.feature2()
+c3.feature3()
+c3.feature4()
+c3.feature5()
+#
+Feature 1 is working
+Feature 2 is working
+Feature 3 is working
+Feature 4 is working
+Feature 5 is working
+
+56. Constructor in Inheritance: - To represent super class we use super method and use MRO (Method resolution order) – Left to right (if class C (A,B) the  super class would be A because A is on the left)
+
+class A:
+    def __init__(self):
+        print("In A init")
+    def feature1(self):
+        print("Feature 1 is working")
+    def feature2(self):
+        print("Feature 2 is working")
+
+class B:
+    def __init__(self):
+        print("In B init")
+    def feature3(self):
+        print("Feature 3 is working")
+    def feature4(self):
+        print("Feature 4 is working")
+
+class C(A,B):
+    def __init__(self):
+        super().__init__()
+        print("In C init")
+    def feat(self):
+        super().feature2()
+c = C()
+c.feat()
+#
+In A init
+In C init
+Feature 2 is working
+
+57. Introduction to polymorphism: - One thing will behave in a different way, poly means many, morph means ways, many ways:- used for loose coupling, dependency Injection, Interface: - 4 ways of implementing it: - 1. Duck typing, 2. Operator overloading; 3. Method overloading; 4. Method Overriding:-
+
+58. Duck typing:-
+class Pycharm:
+    def execute(self):
+        print("Compiling")
+        print("Running")
+
+class Myeditor:
+    def execute(self):
+        print("Spell Check")
+        print("Convention Check")
+        print("Compiling")
+        print("Running")
+
+class Laptop:
+    def code(self, ide):
+        ide.execute()
+
+i = Myeditor()
+c = Laptop()
+c.code(i)
+
+Spell Check
+Convention Check
+Compiling
+Running
+
+59. Operator Overloading:-
+a = 5
+b = 6
+c = '5'
+d = '6'
+
+print(a+b)
+print(int.__add__(a,b))
+print(str.__add__(c,d))
+11
+11
+56
+##
+class student:
+    def __init__(self, m1, m2, m3, subj):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+        self.subj = subj
+    def __add__(self, other):
+        m1 = self.m1 + other.m1
+        m2 = self.m2 + other.m2
+        m3 = self.m3 + other.m3
+        subj = self.subj + other.subj
+        mix = student(m1, m2, m3, subj)
+        return mix
+    def __gt__(self, other):
+        r1 = self.m1 + self.m2 + self.m3
+        r2 = other.m1 + other.m2 + other.m3
+        if r1 > r2:
+            return True
+        else:
+            return False
+    def __str__(self):
+        return '{} {} {} {} '.format(self.m1, self.m2, self.m3, self.subj)
+
+
+s1 = student(58, 69, 44, 'Coding ')
+s2 = student(60, 65, 56, 'Designing ')
+s3 = student(34, 56, 78, 'Presenting ')
+s4 = student(34, 45, 59, 'Testing ')
+
+result = s1 + s2 + s3 + s4 # + plus operator getting over ridden with __add__ method above
+print("\n", result.m1, "\t", result.subj, "\n", result.m2, "\t", result.subj, "\n", result.m3, "\t", result.subj)
+
+if s1 > s2 and s1 > s3 and s1 > s4: #if statement getting overridden with __gt__ method above
+    print("s1 wins", s1) #s1 is getting overridden from above __str__ method, called overriding method
+elif s2 > s3 and s2 > s4:
+    print("s2 wins", s2)
+elif s3 > s4:
+    print("s3 wins", s3)
+else:
+    print("s4 wins", s4)
+#
+186 	 Coding Designing Presenting Testing  
+ 235 	 Coding Designing Presenting Testing  
+ 237 	 Coding Designing Presenting Testing 
+s2 wins 60 65 56 Designing  
+
+Assignment : With function, write a code to show first 10 digits of fibinacci sequence:-
+
+def fib(num):
+    a,b = 0,1
+    for i in range(0, num):
+        print(a, end = “  “)
+        a,b = b, a+b
+
+fib(10)
+
+0  1  1  2  3  5  8  13  21  34  
+
+
+60. Method overloading, method overriding:-
+Method overloading
+class student:
+    def sum(self, a=None, b=None, c=None): #method overloading is not there in python therefore we use a trick here
+        s = 0
+        if a and b and c != None:
+            s = a + b + c
+        elif a and b != None:
+            s = a + b
+        else:
+            s = a
+        return s
+
+s1 = student()
+print(s1.sum(5))#this is called as method over loading which has been run through a technique because we do not have method overloading in python
+print(s1.sum(5,6))
+print(s1.sum(5,6,7))
+5
+11
+18
+
+Method overriding:-
+class A:
+    def show(self):
+        print("in A show")
+
+class B(A):
+    def show(self):
+        print("in B show")
+    pass
+
+Q = B()
+Q.show()
+in B show
+
+61. Abstract class:- with examples of Classes and Objects, classes in Python, Inheritance, Abstract class:-
+
+class student:
+    pres_rise = 1.05
+    def __init__(self, first, last, marks):
+        self.first = first
+        self.last = last
+        self.marks = marks
+        self.email = first + '.' + last + '.' '@school.com'
+
+    def full_name(self):
+        return '{} {}'.format(self.first, self.last)
+
+    def apply_rise(self):
+        self.marks = int(self.marks * 1.10)
+
+class dumb(student):
+    pres_rise = 1.10
+    def __init__(self, first, last, marks, prog_lang):
+        super().__init__(first, last, marks)
+        self.prog_lang = prog_lang
+
+
+std_1 = dumb('Neel', 'Verma', 60, 'Python')
+print(std_1.prog_lang)
+#print(std_1.email)
+#print(help(dumb))
+#print(std_1.pres_rise)
+#std_2 = student('Namey2', 'Famery2', 60)
+std_1.apply_rise()
+print(std_1.marks)
+#std_2.apply_rise()
+#print(std_1.marks)
+#print(std_2.marks)
+#print(std_1.__dict__)
+#print(student.__dict__)
+Python
+66
+
+########Abstract class###########
+from abc import ABC, abstractmethod
+
+class employee(ABC):
+    @abstractmethod
+    def salary(self, sal):
+        pass
+class developer(employee):
+    def salary(self, sal):
+        totalsalary = int(sal * 1.10)
+        return totalsalary
+    def position(self, position):
+        self.position = position
+        return position
+
+emp1 = developer()
+print(emp1.salary(90000))
+print(emp1.position('Web developer'))
+
+99000
+Web developer
+
+from abc import ABC, abstractmethod
+
+class computer(ABC):
+    @abstractmethod
+    def process(self):
+        pass
+
+class laptop(computer):
+    def process(self):
+        print("it is running")
+
+class whiteboard():
+    def write(self):
+        print("it is writing")
+
+class programmer:
+    def work(self, com):
+        print("solving bugs")
+        com.process()
+
+acer = laptop()
+#c.process()
+w = whiteboard()
+prog1 = programmer()
+prog1.work(acer)
+#c.process()
+
+solving bugs
+it is running
+
+61. Iterator:-
+nums = [7,8,9,5]
+
+it = iter(nums)
+print(it.__next__())
+print(it.__next__())
+#or
+print(next(it))
+7
+8
+9
+#
+Or
+class top10:
+    def __init__(self):
+        self.num = 1
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.num <= 5:
+            val = self.num
+            self.num +=1
+            return val
+        else:
+            raise StopIteration
+
+values = top10()
+print(next(values))
+for i in values:
+    print(i)
+1
+2
+3
+4
+5
+
+62. Generators:-
+def topten():
+    yield 1
+    yield 2
+    yield 3
+    yield 4
+    yield 5
+
+
+values = topten()
+print(values.__next__())
+print(values.__next__())
+for i in values:
+    print (i)
+#
+1
+2
+3
+4
+5
+#
+#
+def topten():
+    n = 1
+    while n <= 10:
+        sq = n*n
+        yield sq
+        n+=1
+
+
+values = topten()
+for i in values:
+    print(i)
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+63. Exception handling:-
+
+1.	Syntactical or syntax, compile error:- for ex:- you forgot to put : in If condition
+2.	Logical error: - You’re expected an output but you got a different output.
+3.	Run-time error:- your logic is correct as well as syntax but user enters or input an unexpected output. 
+
+print("Resource opened")
+a = int(input("Enter the first number: "))
+b = int(input("Enter the second number: "))
+
+try:
+    k = int(input("Enter a number to make it half: "))
+    print("Your first 2 numbers division is : ", a/b)
+except ZeroDivisionError as e:
+    print("In your first 2 inputs, you cannot divide the number by zero, ", e)
+except ValueError as e:
+    print("Invalid Input ", e)
+except Exception as e:
+    print("Something went wrong..", e)
+finally:
+    print("The half of your 3rd input is : ", k / 2)
+    print("Resource closed")
+Resource opened
+Enter the first number: 9
+Enter the second number: 0
+Enter a number to make it half: 9
+In your first 2 inputs, you cannot divide the number by zero,  division by zero
+The half of your 3rd input is:  4.5
+Resource closed
+
+
+
+64. Multi-Threading:-
+
+from threading import *
+from time import sleep
+class Hello(Thread):
+    def run (self):
+        for i in range(5):
+            print("Hello")
+            sleep(1)
+
+class Hi(Thread):
+    def run (self):
+        for i in range(5):
+            print("Hi")
+            sleep(1)
+
+t1 = Hello()
+t2 = Hi()
+
+t1.start()
+sleep(0.2)
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Bye")
+
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Bye
+
+65. File Handling:-
+ f = open ('MyData', 'r')
+#print(f.read())
+#print(f.readline())
+
+f1 = open ('abcd', 'w')
+for data in f:
+    f1.write(data)
+
+f2 = open ('abcd', 'a')
+f2.write("\nLaptop")
+
+f = open('MyGod.jpg', 'rb')
+f1 = open ('MyGod2.jpg', 'wb')
+
+for i in f:
+    f1.write(i)
+#
+My Name is Boo Jaiswal
+Boo on YouTube
+Programming and Technology videos
+Corporate Trainer
+Lisbon
+Subscribers
+Acer Laptop
+Laptop
+66. Comments in python:-
+##################################
+67. Is Python compiled or interpreted language:-
+It is both
+	
+68. Linear search using Python:-
+b = -1
+def search(list, n):
+    i = 0
+    while i < len(list):
+        if list[i] == n:
+            globals()['b'] = i
+            return True
+        i+=1
+    return False
+
+
+list = [3,5,2,6,8,9]
+n = int(input("Enter the value you want to search: "))
+if search(list, n):
+    print("Found at", b+1)
+else:
+    print("Not found")
+Enter the value you want to search: 6
+Found at 4
+						Or
+Using for loop:-
+
+k = 1
+def search(list, n):
+    for i in range(len(list)):
+        if list[i] == n:
+            globals()['k'] = i
+            return True
+    return False
+
+list = [3,5,6,7,4,9,2]
+n = int(input("Enter the value: "))
+if search(list,n):
+    print("Found at ", k+1)
+else:
+    print("Not found")
+
+Enter the value: 2
+Found at  7
+	
+list = [2,3,4,56,7,8,9,]
+n = int(input("Enter the number to search : "))
+for i in range(len(list)):
+    if list[i] == n:
+        print("Found at ", i+1)
+        break
+else:
+    print("not found")
+Enter the number to search : 9
+Found at  7
+
+									
+						Or
+69. Binary search using Python:-
+k = -1
+def bin_search(list, n):
+    l = 0
+    u = len(list)-1
+    for i in range (len(list)):
+        m = (l + u) // 2
+        if list[m] == n:
+            globals() ['k'] = m
+            return True
+        else:
+            if list[m] < n:
+                l = m + 1
+            else:
+                u = m - 1
+    return False
+
+list = [2,3,5,8,9]
+n = int(input("Enter the number to search: "))
+if bin_search(list, n):
+    print("found at: ", k+ 1)
+else:
+    print("not found")
+
+Enter the value to search: 343434	
+Found at  11
+#
+Enter the value to search: 34343
+Not found, try again, 1 more attempt left 
+Enter the value to search again: 343434
+Found at  11
+70. Bubble sort in Python | list sort:-
+def sort(list):
+    for i in range(len(list)-1, 0, -1):
+        for j in range(i):
+            if list[j] > list[i]:
+                list[j], list[i] = list[i], list[j]
+
+list = [34,23,45,67,43,36,22,78,90]
+sort(list)
+print(list)
+#output
+#[22, 23, 34, 36, 43, 45, 67, 78, 90]
+71. Selection sort in python:-
+def sort(list):
+    for i in range(8):
+        m = i
+        for j in range(i, 9):
+            if list[j] < list[m]:
+                m = j
+        list[i], list[m] = list[m], list[i]
+
+
+list = [34,23,45,67,43,36,22,99,90]
+sort(list)
+print(list)
+[22, 23, 34, 36, 43, 45, 67, 90, 99]
+72. MySQL workbench setup | python database connection:- below code is in mysql workbench:-
+show databases;
+create database telusko;
+use telusko;
+create table student (name varchar(20), college varchar(20));
+insert into student values ('navin', 'vsit'), ('priya', 'bvit');
+select * from student;
+
+73. Python database connection, MySQL:- in sublime:-
+import mysql.connector
+mydb = mysql.connector.connect(host="localhost", user="root", passwd="Nitesh1991J", database="Teluskos")
+mycursor = mydb.cursor()
+mycursor.execute("insert into student1 values ('hmm', 'colg'), ('koka', 'popa')")
+mycursor.execute("select * from student1")
+for i in mycursor:
+    print(i)
+print()
+mycursor.execute("delete from student1 where name = 'hmm'")
+mycursor.execute("select * from student1")
+for i in mycursor:
+    print(i)
+#
+('navin', 'vsit')
+('priya', 'bvit')
+('hmm', 'colg')
+('koka', 'popa')
+
+('navin', 'vsit')
+('priya', 'bvit')
+('koka', 'popa')
+
+
+
+Snake.py – snake game - :-
+"""Snake, classic arcade game.
+
+Exercises
+
+1. How do you make the snake faster or slower?
+2. How can you make the snake go around the edges?
+3. How would you move the food?
+4. Change the snake to respond to arrow keys.
+
+"""
+
+from turtle import *
+from random import randrange
+from freegames import square, vector
+
+food = vector(0, 0)
+snake = [vector(10, 0)]
+aim = vector(0, -10)
+
+def change(x, y):
+    "Change snake direction."
+    aim.x = x
+    aim.y = y
+
+def inside(head):
+    "Return True if head inside boundaries."
+    return -200 < head.x < 190 and -200 < head.y < 190
+
+def move():
+    "Move snake forward one segment."
+    head = snake[-1].copy()
+    head.move(aim)
+
+    if not inside(head) or head in snake:
+        square(head.x, head.y, 9, 'red')
+        update()
+        return
+
+    snake.append(head)
+
+    if head == food:
+        print('Snake:', len(snake))
+        food.x = randrange(-15, 15) * 10
+        food.y = randrange(-15, 15) * 10
+    else:
+        snake.pop(0)
+
+    clear()
+
+    for body in snake:
+        square(body.x, body.y, 9, 'black')
+
+    square(food.x, food.y, 9, 'green')
+    update()
+    ontimer(move, 100)
+
+setup(420, 420, 370, 0)
+hideturtle()
+tracer(False)
+listen()
+onkey(lambda: change(10, 0), 'Right')
+onkey(lambda: change(-10, 0), 'Left')
+onkey(lambda: change(0, 10), 'Up')
+onkey(lambda: change(0, -10), 'Down')
+move()
+done()
+Snake game – with Pie eater – 
+import random
+import curses
+
+s = curses.initscr()
+curses.curs_set(0)
+sh, sw = s.getmaxyx()
+w = curses.newwin(sh, sw, 0, 0)
+w.keypad(1)
+w.timeout(100)
+
+snk_x = sw/4
+snk_y = sh/2
+snake = [
+[snk_y, snk_x],
+[snk_y, snk_x-1],
+[snk_y, snk_x-2]
+]
+
+food = [sh / 2, sw / 2]
+w.addch(food[0], food[1], curses.ACS_PI)
+
+key = curses.KEY_RIGHT
+
+while True:
+    next: key = w.getch()
+    key = key if next_key == -1 else next_key
+
+if snake[0][0] in [0, sh] or snake[0][1] in [0, sw] or snake[0] in snake[1:]:
+    curses.endwin()
+    quit()
+
+new: head = [snake[0][0], snake[0][1]]
+
+if key == curses.KEY_DOWN:
+    new_head[0] += 1
+if key == curses.KEY_UP:
+    new_head[0] -= 1
+if key == curses.KEY_LEFT:
+    new_head[1] -= 1
+if key == curses.KEY_RIGHT:
+    new_head[1] += 1
+
+    snake.insert(0, new_head)
+
+    if snake[0] == food:
+        food = None
+        while food is None:
+            nf = [
+                random.randint(1, sh - 1),
+                random.randint(1, sh - 1)
+            ]
+            food = nf if nf not in snake else None
+        w.addch(food[0], food[1], curses.ACS, PI)
+    else:
+        tail = snake.pop()
+        w.addch(tail[0], tail[1], ' ')
+
+    w.addch(snake[0][0], snake[0][1], curses.ACS, CKBOARD)
+
+74. Python | GITHUB | Pycharm :-
+How to pull and push project from Git Repository:-
+75. Python Github code contribution:-
+How to pull and push project from Git Repository:-
+76. Zip function in Python:-
+name = ("navin", "Kiran", "Harsh", "navin" )
+comps  = ("Dell", "Apple", "MS", "Dell")
+
+zipped = list(zip (name, comps))
+print(zipped)
+
+zipped = set(zip (name, comps))
+print(zipped)
+
+zipped = dict(zip (name, comps))
+print(zipped)
+
+for for loop:-
+
+
+77. Socket programming:-
+MyCodepy:-
+
+import socket
+s = socket.socket()
+print("Socket created")
+s.bind(('localhost', 9999))
+s.listen(3)
+print("waiting for connection")
+
+while True:
+    c, addr = s.accept()
+    name = c.recv(1024).decode()
+    print("Connected with", addr, name)
+
+    c.send(bytes('Welcome to Telusko', 'utf-8'))
+    c.close()
+#
+
+Socket created
+waiting for connection
+Connected with ('127.0.0.1', 56395) Nitesh
+Connected with ('127.0.0.1', 56396) Nitesh
+Connected with ('127.0.0.1', 56397) What'sup
+
+Client.py:-
+	
+import socket
+c = socket.socket()
+c.connect(('localhost', 9999))
+name = input("Enter your name: ")
+c.send(bytes(name,'utf-8'))
+print(c.recv(1024).decode())
+
+#
+Enter your name: What'sup
+Welcome to Telusko
+
+
+Sending emails via python:-
+Test.py:-
+
+import smtplib
+import MyCode
+
+def send_email(subject, msg):
+
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.ehlo()
+        server.starttls()
+        server.login(MyCode.EMAIL_ADDRESS, MyCode.PASSWORD)
+        message = 'Subject: {}\n\n{}'.format(subject, msg)
+        server.sendmail(MyCode.EMAIL_ADDRESS, MyCode.Receiver1, message)
+        server.quit()
+
+        print("Success: Email sent")
+
+Test = send_email('Email via Python', 'Hello Greetings of the day, \n, Now do you see message from Automated Python email')
+
+MyCode.py:-
+
+EMAIL_ADDRESS = "niteshjaiswal999@gmail.com"
+PASSWORD = "welcome2googledurgamaa"
+Receiver1 = "niteshnealjaiswal@outlook.com"
+Receiver2 = "lisbondocuments@gmail.com"
+
+
+Python Projects:-
+
+1. Mad Libs Generator
+2. Number Guessing
+3. Text-based Adventure Game
+4. Dice Rolling Simulator
+5. Hangman
+6. Contact Book
+7. Email Slicer
+8. Binary search algorithm
+9. Desktop Notifier App
+10. Python Story Generator
+11. YouTube video downloader
+12. Python Website Blocker
+13. Spin a Yarn
+14. What’s the word?
+15. Rock, Paper, Scissors
+16. Leap it!
+17. Find out, Fibonacci!
+18. Calculator
+19. Countdown Clock and Timer
+20. Random Password Generator
+21. Random Wikipedia Article
+22. Reddit Bot
+23. Python Command-Line Application
+24. Alarm Clock
+25. Tic-Tac-Toe
+26. Steganography
+27. Currency converter
+28. Post-it Notes
+29. Site Connectivity Checker
+30. Directory Tree Generator
+31. Speed Typing Test
+32. Content Aggregator
+33. Bulk File Rename/ Image Resize Application
+34. Python File Explorer
+35. Plagiarism Checker
+36. Web Crawler
+37. Music Player
+38. Price Comparison Extension
+39. Expense Tracker
+40. Regex Query Tool
+41. Instagram Photo Downloader
+42. Quiz Application
+
+
+
+
+

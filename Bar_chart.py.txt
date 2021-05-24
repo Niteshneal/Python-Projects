@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = [['E001', 'M', 34, 123, 'Normal', 350],
+['E002', 'F', 45, 114, 'Overweight', 450],
+['E003', 'M', 38, 119, 'Average', 260],
+['E004', 'F', 67, 178, 'Obesity', 190],
+['E005', 'M', 23, 145, 'Underweight', 200],
+['E006', 'F', 87, 184, 'Normal', 430],
+['E007', 'M', 31, 131, 'Average', 250],
+['E008', 'F', 60, 191, 'Weak', 180],
+['E009', 'M', 41, 159, 'Perfect', 360]]
+
+#dataframe created with the above data array
+df = pd.DataFrame(data, columns = ['EmpID', 'Gender', 'Age', 'Sales', 'BMI', 'Income'])
+
+df.plot.bar()
+#plot between 2 attributes
+
+plt.bar(df['Sales'], df['Income'])
+plt.xlabel("Age")
+plt.ylabel("Sales")
+plt.show()
